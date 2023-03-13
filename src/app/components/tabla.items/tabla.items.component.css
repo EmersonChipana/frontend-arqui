@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+    /*agregar espacios entre columnas de la tabla*/
+    
+
+}
+
+.groupButton {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}

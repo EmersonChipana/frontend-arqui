@@ -1,0 +1,27 @@
+<div class="form-exchange" >
+  <h2>Formulario cambio de moneda</h2>
+  <form [formGroup]="exchangeForm" (ngSubmit)="requestExchange()">
+    <mat-form-field class="example-full-width" >
+        <mat-label>Origen</mat-label>
+        <input matInput placeholder="Ex. BOB" type="text" formControlName="origen">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Destino</mat-label>
+      <input matInput placeholder="Ex. USD" type="text" formControlName="destino">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Monto</mat-label>
+      <input matInput placeholder="Ex. 12345" type="number" formControlName="monto">
+    </mat-form-field>
+
+    <h2 *ngIf="response">Resultado {{response.result}}</h2>
+
+    <div class="example-button-container">
+      <button mat-fab color="accent">
+        <mat-icon>upload</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>

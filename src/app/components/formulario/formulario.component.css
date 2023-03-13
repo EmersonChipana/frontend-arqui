@@ -1,0 +1,24 @@
+
+.form-exchange {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  background-color: black;
+  padding: 20px;
+  margin: 20px;
+  color: white;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field{
+  width: 100%;
+  margin: 10px;
+}
+
+h2{
+  color: #fff;
+}
