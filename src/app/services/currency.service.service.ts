@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/enviroment.ts';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -12,7 +12,7 @@ export class CurrencyServiceService {
   constructor(private http: HttpClient) { }
 
   public getExchangeRate(from: string, to: string, amont: number): Observable<any> {
-    return this.http.get<any>(enviroment.url+"/get?from=" + from + "&to=" + to + "&amount=" + amont);
+    return this.http.get<any>(environment.url+"/get?from=" + from + "&to=" + to + "&amount=" + amont);
   }
 
   public getAll(page: Number): Observable<any>{

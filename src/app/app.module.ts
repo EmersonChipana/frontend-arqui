@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TablaItemsComponent } from './components/tabla.items/tabla.items.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { APP_INITIALIZER } from '@angular/core';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -46,7 +48,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    KeycloakAngularModule
   ],
   providers: [
     {
