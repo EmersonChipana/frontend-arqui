@@ -15,6 +15,20 @@ import { TablaItemsComponent } from './components/tabla.items/tabla.items.compon
 import { MatTableModule } from '@angular/material/table';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
+function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'http://localhost:8080',
+        realm: 'software',
+        clientId: 'frontend'
+      },
+      initOptions: {
+        onLoad: 'login-required',
+      }
+    });
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +48,14 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatTableModule,
     MatButtonToggleModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
