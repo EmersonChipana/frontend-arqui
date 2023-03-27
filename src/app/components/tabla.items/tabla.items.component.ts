@@ -58,7 +58,6 @@ export class TablaItemsComponent implements OnInit {
         }
       });
     }
-    console.log(this.page);
   }
 
 

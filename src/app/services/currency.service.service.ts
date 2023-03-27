@@ -16,6 +16,6 @@ export class CurrencyServiceService {
   }
 
   public getAll(page: Number): Observable<any>{
-    return this.http.get<any>(environment.url+"/getall?page="+page+"&size=10");
+    return this.http.get<any>(environment.url+"/getall?page=" + page + "&size=10");
   }
 }
