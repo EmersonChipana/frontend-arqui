@@ -73,8 +73,29 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.docker.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.docker.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "tunnel": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "1mb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.tunnel.ts"
                 }
               ],
               "outputHashing": "all"
@@ -93,6 +114,9 @@
             },
             "docker": {
               "browserTarget": "frontend-arqui:build:docker"
+            },
+            "tunnel": {
+              "browserTarget": "frontend-arqui:build:tunnel"
             }
           },
           "defaultConfiguration": "development"
